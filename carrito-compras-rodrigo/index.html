@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es-Mx">
-    <head> <!--AQUI VIENE LOS METADATOS Y LA CONEXION al style.css-->
+<head>  <!--AQUI VIENE LOS METADATOS Y LA CONEXION al style.css-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="Rodrigo Tonathiu ">
@@ -15,25 +15,193 @@ para una e-commerce de aparatos electronicos ">
     <script src="https://cdn.tailwindcss.com/3.4.17"></script>
     <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
-    </head>
-<body class="body">
-<header class="header">
+</head>
+<body class="paper-texture">
+
+            <!--========ENCABEZADO======= -->
+<header class="site-header">
     <div class="container header-inner">
-        <a class="logo" href="#">
-
-            <!-- Imagen utilizada como logo -->
-            <img src=""/>
-
-        </a>
-        <a href="#" class="brand-name-link">
-    <span data-template-id="brand-name" class="canva-text title-font text-lg font-bold" style="color: rgb(63, 48, 42); font-weight: 700; font-style: normal; font-size: 16px;">TechIY</span> </a>
+        <a href="#inicio" class="logo">
+        <span class="logo-icon">📲</span>
+        Tecnologia RT 
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#oferta">Oferta</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+        <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero hacer un pedido en Dulce Detalle.')">
+          <i data-lucide="message-circle"></i> Pedir ahora
+        </button>
+      </nav>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">☰</button>
     </div>
 
-
-
-
+    <nav id="mobile-menu" class="mobile-nav">
+        <ul>
+          <li><a href="#inicio">inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#oferta">Oferta</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+         <button type="button" class="btn primary" onclick="openWhatsApp('Hola, quiero hacer un pedido en Dulce Detalle.')">
+        <i data-lucide="message-circle"></i> Pedir ahora
+      </button>
+      </nav>
 </header>
+<main>
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <p class="eyebrow">Innovación y Tecnología </p>
+          <h1>Lo último en aparatos tecnológicos</h1>
+          <p class="lead">Encuentra smartphones, laptops, audio y accesorios de alta calidad al mejor precio.</p>
+          <div class="hero-actions">
+            <a href="#productos" class="btn primary">Ver productos</a>
+            <button type="button" class="btn outline" onclick="openWhatsApp('Hola, vi su página y me gustaría conocer sus regalos personalizados.')">Comprar por WhatsApp</button>
+          </div>
+          <p class="trust"><i data-lucide="heart"></i> Envíos rápidos y compra 100% segura</p>
+        </div>
+        <div class="hero-image reveal">
+          <img src="img/logo.png">
+          <span class="tag tag-love">Garantía RT</span>
+          <span class="tag tag-custom">Envío Inmediato</span>
+        </div>
+      </div>
+    </section>
+
+   <!-- ================= PRODUCTOS ================= -->
+<section id="productos" class="products">
+  <div class="container">
+    <div class="section-heading reveal">
+      <p class="eyebrow">Catálogo Destacado</p>
+      <h2>Conoce nuestros productos</h2>
+      <p class="lead">La mejor tecnología  para tu día a día.</p>
+    </div>
+    
+    <div class="product-grid">
+      
+      <!-- Producto 1: Celulares -->
+      <article class="product-card reveal">
+        <img src="img/celulares.jpg" alt="Smartphone Pro de última generación">
+        <div class="product-body">
+          <span class="tag">Más vendido</span>
+          <h3>Smartphone Pro</h3>
+          <p class="price">$11,999 MXN</p>
+          <p class="description">Pantalla , excelente cámara y batería de larga duración.</p>
+          <button type="button" class="btn card" onclick="openModal('modal-celular')">Ver producto</button>
+        </div>
+      </article>
+
+      <!-- Producto 2: Laptops -->
+      <article class="product-card reveal">
+        <img src="img/laptops.jpg" alt="Laptop Ultra Slim para trabajo y estudio">
+        <div class="product-body">
+          <span class="tag">Rendimiento</span>
+          <h3>Laptop Ultra Slim</h3>
+          <p class="price">$17,999 MXN</p>
+          <p class="description">Procesador rápido, diseño liviano y pantalla de alta resolución.</p>
+          <button type="button" class="btn card" onclick="openModal('modal-laptop')">Ver producto</button>
+        </div>
+      </article>
+
+      <!-- Producto 3: Audífonos -->
+      <article class="product-card reveal">
+        <img src="img/audifonos.jpg" alt="Audífonos Inalámbricos Bluetooth">
+        <div class="product-body">
+          <span class="tag">Audio HD</span>
+          <h3>Audífonos Bluetooth</h3>
+          <p class="price">$999 MXN</p>
+          <p class="description">Cancelación de ruido y sonido envolvente para tu música favorita.</p>
+          <button type="button" class="btn card" onclick="openModal('modal-audifonos')">Ver producto</button>
+        </div>
+      </article>
+
+      <!-- Producto 4: Relojes Inteligentes -->
+      <article class="product-card reveal">
+        <img src="img/relojes.jpg" alt="Smartwatch Sport con sensores de salud">
+        <div class="product-body">
+          <span class="tag">Salud & Sport</span>
+          <h3>Smartwatch Sport</h3>
+          <p class="price">$1,599 MXN</p>
+          <p class="description">Monitoreo de ritmo cardíaco, pasos y notificaciones al instante.</p>
+          <button type="button" class="btn card" onclick="openModal('modal-reloj')">Ver producto</button>
+        </div>
+      </article>
+
+      <!-- Producto 5: Cámaras -->
+      <article class="product-card reveal">
+        <img src="img/camaras.jpg" alt="Cámara de Seguridad Wi-Fi">
+        <div class="product-body">
+          <span class="tag">Seguridad</span>
+          <h3>Cámara de Seguridad Wi-Fi</h3>
+          <p class="price">$799 MXN</p>
+          <p class="description">Visión nocturna, detección de movimiento y control desde tu celular.</p>
+          <button type="button" class="btn card" onclick="openModal('modal-camara')">Ver producto</button>
+        </div>
+      </article>
+
+      <!-- Producto 6: Consolas -->
+      <article class="product-card reveal">
+        <img src="img/consolas.jpg" alt="Consola Gamer de última generación">
+        <div class="product-body">
+          <span class="tag">Gaming</span>
+          <h3>Consola Gamer</h3>
+          <p class="price">$8,999 MXN</p>
+          <p class="description">Gráficos en alta definición y máximo entretenimiento en casa.</p>
+          <button type="button" class="btn card" onclick="openModal('modal-consola')">Ver producto</button>
+        </div>
+      </article>
+
+      <!-- Producto 7: Bocinas -->
+          <article class="product-card reveal">
+            <img src="img/bocinas.jpg" alt="Bocina Portátil Bluetooth">
+            <div class="product-body">
+              <span class="tag">Audio</span>
+              <h3>Bocina Portátil</h3>
+              <p class="price">$699 MXN</p>
+              <p class="description">Resistente al agua y con batería de hasta 12 horas continuas.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-bocina')">Ver producto</button>
+            </div>
+          </article>
+
+          <!-- Producto 8: Tablets -->
+          <article class="product-card reveal">
+            <img src="img/tablets.jpg" alt="Tablet Pro 10 pulgadas">
+            <div class="product-body">
+              <span class="tag">Productividad</span>
+              <h3>Tablet Pro 10"</h3>
+              <p class="price">$5,499 MXN</p>
+              <p class="description">Ideal para estudio, lectura y diseño con soporte para lápiz óptico.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-tablet')">Ver producto</button>
+            </div>
+          </article>
+
+          <!-- Producto 9: Cargadores -->
+          <article class="product-card reveal">
+            <img src="img/cargadores.jpg" alt="Cargador Rápido 65W">
+            <div class="product-body">
+              <span class="tag">Accesorios</span>
+              <h3>Cargador Rápido 65W</h3>
+              <p class="price">$499 MXN</p>
+              <p class="description">Carga ultra rápida compatible con celulares, tablets y laptops.</p>
+              <button type="button" class="btn card" onclick="openModal('modal-cargador')">Ver producto</button>
+            </div>
+          </article>
+
+    </div>
+  </div>
+</section>
 
 
+
+</main>
+    <!--Logica al sitio -->
+<script src="js/script.js"></script>
 </body>
 </html>
